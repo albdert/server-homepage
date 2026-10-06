@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Server</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect x='12' y='18' width='76' height='26' rx='6' fill='%23636663'/><rect x='12' y='56' width='76' height='26' rx='6' fill='%23636663'/></svg>" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Fira+Code:wght@300;400;500&display=swap" rel="stylesheet" />
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem('theme');
+          if (t) document.documentElement.setAttribute('data-theme', t);
+          var f = localStorage.getItem('font');
+          if (f) document.documentElement.setAttribute('data-font', f);
+        } catch (e) {}
+      })();
+    </script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <aside class="sidebar">
+        <a href="/" class="sidebar__logo" id="logo">server.</a>
+        <div class="sidebar__settings" id="settings">
+          <div class="sidebar-nav__title section-label">Settings</div>
+        </div>
+      </aside>
+
+      <main class="main">
+        <h1 id="title">Server</h1>
+        <p class="subtitle" id="subtitle"></p>
+        <div id="services"></div>
+      </main>
+
+      <footer class="footer">
+        <span>Edit <code>services.json</code> to add services.</span>
+      </footer>
+    </div>
+
+    <div class="typeahead-box" id="typeahead" hidden aria-live="polite">
+      <span class="typeahead-box__query"></span>
+      <span class="typeahead-box__match"></span>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

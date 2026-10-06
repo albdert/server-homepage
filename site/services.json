@@ -1,0 +1,11 @@
+{
+  "title": "albert-debian-server",
+  "services": [
+    { "name": "Immich", "description": "Photos and videos", "category": "Media", "url": "https://immich.albdert.no", "icon": "/icons/immich.svg" },
+    { "name": "File Browser", "description": "Server files", "category": "Media", "url": "https://files.albdert.no", "icon": "filebrowser" },
+    { "name": "Pi-hole", "description": "DNS and ad blocking", "category": "Network", "url": "https://dns.albdert.no", "path": "/admin", "icon": "pi-hole" },
+    { "name": "Nginx", "description": "Reverse proxy", "category": "Network", "url": "nginx.albdert.no", "icon": "nginx-proxy-manager" },
+    { "name": "Portainer", "description": "Docker management", "category": "System", "url": "https://portainer.albdert.no", "icon": "portainer", "check": false },
+    { "name": "Beszel", "description": "Monitoring", "category": "System", "url": "https://beszel.albdert.no", "icon": "beszel" }
+  ]
+}
