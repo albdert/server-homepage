@@ -337,9 +337,35 @@ function startTypeahead(cards) {
   })
 }
 
+function startSidebarGroups() {
+  const aside = document.querySelector('.sidebar')
+  const groups = [...document.querySelectorAll('.sidebar-group')]
+
+  const setOpen = (group, open) => {
+    group.classList.toggle('is-open', open)
+    group.querySelector('.sidebar-group__toggle').setAttribute('aria-expanded', String(open))
+  }
+  const closeAll = () => groups.forEach((g) => setOpen(g, false))
+
+  for (const group of groups) {
+    group.querySelector('.sidebar-group__toggle').addEventListener('click', () => {
+      const open = !group.classList.contains('is-open')
+      closeAll()
+      setOpen(group, open)
+    })
+  }
+  document.addEventListener('pointerdown', (e) => {
+    if (!aside.contains(e.target)) closeAll()
+  })
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !e.defaultPrevented) closeAll()
+  })
+}
+
 /* ── init ────────────────────────────────── */
 
 async function init() {
+  startSidebarGroups();
   const settings = document.getElementById('settings')
   settings.append(
     sidebarSelect('Theme', THEMES, attrSetting('data-theme', 'theme', 'system')),

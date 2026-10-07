@@ -24,9 +24,13 @@
     <div class="app">
       <aside class="sidebar">
         <a href="/" class="sidebar__logo" id="logo">server.</a>
-        <div class="sidebar__settings" id="settings">
-          <div class="sidebar-nav__title section-label">Settings</div>
-        </div>
+          <div class="sidebar-group">
+            <div class="sidebar-group__label section-label">Settings</div>
+            <button type="button" class="sidebar-group__toggle section-label" aria-expanded="false" aria-controls="settings">
+              Settings<span class="sidebar-group__chevron" aria-hidden="true"></span>
+            </button>
+            <div class="sidebar-group__panel sidebar__settings" id="settings"></div>
+          </div>
       </aside>
 
       <main class="main">

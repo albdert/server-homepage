@@ -136,6 +136,8 @@ h1 { font-size: 1.45rem; font-weight: 400; letter-spacing: -0.02em; line-height:
 .sidebar-nav__link:hover { color: var(--text); background: var(--hover-bg); }
 
 .sidebar__settings { display: flex; flex-direction: column; align-items: flex-start; gap: 0.2rem; }
+.sidebar-group__label { margin-bottom: 0.4rem; }
+.sidebar-group__toggle { display: none; }
 
 .sidebar-select { position: relative; }
 .sidebar-select__trigger {
@@ -296,23 +298,55 @@ h1 { font-size: 1.45rem; font-weight: 400; letter-spacing: -0.02em; line-height:
   .main, .footer { grid-column: 1; }
   .main { padding-top: 0; }
   .sidebar {
+    top: auto;
     grid-row: auto;
     position: static;
     flex-direction: row;
-    flex-wrap: wrap;
     align-items: center;
-    gap: 0.4rem 1rem;
+    gap: 0.2rem;
     padding: 1.5rem 0 1rem;
     margin-bottom: 2rem;
     border-bottom: 1px solid var(--line);
   }
+
   .sidebar__logo { margin-right: auto; }
-  .sidebar-nav__title { display: none; }
-  .sidebar-nav__list { flex-direction: row; flex-wrap: wrap; gap: 0; }
-  .sidebar-nav__link { margin-left: 0; padding: 0.3rem 0.5rem; font-size: 0.83rem; }
-  .sidebar__settings { flex-direction: row; gap: 0; }
-  .sidebar-select__trigger { padding: 0.3rem 0.5rem; font-size: 0.83rem; }
-  .sidebar-select__list { left: auto; right: 0; padding: 0.2rem 0.8rem 0.2rem 0; }
+
+  .sidebar-group__label { display: none; }
+  .sidebar-group__toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: none;
+    border: none;
+    padding: 0.35rem 0.4rem;
+    cursor: pointer;
+    transition: color 0.15s;
+  }
+  .sidebar-group__toggle:hover,
+  .sidebar-group__toggle[aria-expanded='true'] { color: var(--text); }
+  .sidebar-group__chevron {
+    width: 5px;
+    height: 5px;
+    border-right: 1px solid currentColor;
+    border-bottom: 1px solid currentColor;
+    transform: translateY(-2px) rotate(45deg);
+    transition: transform 0.15s;
+  }
+  .sidebar-group__toggle[aria-expanded='true'] .sidebar-group__chevron { transform: translateY(1px) rotate(225deg); }
+  .sidebar-group__panel {
+    display: none;
+    position: absolute;
+    top: calc(100% + 1px);
+    left: 0;
+    right: 0;
+    z-index: 20;
+    padding: 0.8rem 0 1rem;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+  }
+  .sidebar-group.is-open .sidebar-group__panel { display: flex; }
+  .sidebar-select__trigger { padding: 0.35rem 0; }
+  .sidebar-select__list { position: static; min-width: 0; margin: 0.2rem 0 0.4rem; background: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
