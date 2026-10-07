@@ -6,6 +6,7 @@
     { "name": "Pi-hole", "description": "DNS and ad blocking", "category": "Network", "url": "https://dns.albdert.no", "path": "/admin", "icon": "pi-hole" },
     { "name": "Nginx", "description": "Reverse proxy", "category": "Network", "url": "https://nginx.albdert.no", "icon": "nginx-proxy-manager" },
     { "name": "Portainer", "description": "Docker management", "category": "System", "url": "https://portainer.albdert.no", "icon": "portainer", "check": false },
-    { "name": "Beszel", "description": "Monitoring", "category": "System", "url": "https://beszel.albdert.no", "icon": "beszel" }
+    { "name": "Beszel", "description": "Monitoring", "category": "System", "url": "https://beszel.albdert.no", "icon": "beszel" },
+    { "name": "CS2", "description": "CS2 kz server", "category": "Game server", "url": "https://home.albdert.no", "icon": "/icons/cs2" }
   ]
 }
