@@ -18,19 +18,19 @@
         } catch (e) {}
       })();
     </script>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=3" />
   </head>
   <body>
     <div class="app">
       <aside class="sidebar">
         <a href="/" class="sidebar__logo" id="logo">server.</a>
-          <div class="sidebar-group">
-            <div class="sidebar-group__label section-label">Settings</div>
-            <button type="button" class="sidebar-group__toggle section-label" aria-expanded="false" aria-controls="settings">
-              Settings<span class="sidebar-group__chevron" aria-hidden="true"></span>
-            </button>
-            <div class="sidebar-group__panel sidebar__settings" id="settings"></div>
-          </div>
+        <div class="sidebar-group" id="settings-group">
+          <div class="sidebar-group__label section-label">Settings</div>
+          <button type="button" class="sidebar-group__toggle section-label" aria-expanded="false" aria-controls="settings">
+            Settings<span class="sidebar-group__chevron" aria-hidden="true"></span>
+          </button>
+          <div class="sidebar-group__panel sidebar__settings" id="settings"></div>
+        </div>
       </aside>
 
       <main class="main">
@@ -49,6 +49,6 @@
       <span class="typeahead-box__match"></span>
     </div>
 
-    <script src="app.js"></script>
+    <script src="app.js?v=3"></script>
   </body>
 </html>
